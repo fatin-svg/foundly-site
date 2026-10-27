@@ -1,226 +1,706 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17183f">
-<meta name="description" content="FOUNDLY is a calm, community-powered place where lost belongings find their way back.">
-<title>FOUNDLY — A little hope. A way home.</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='1' y='1' width='46' height='46' rx='14' fill='%23111d2d'/%3E%3Cpath d='M10 34C10 17 20 8 38 8C38 25 29 37 13 37' fill='%2399b9a7'/%3E%3Cpath d='M11 37C19 29 25 22 35 12' fill='none' stroke='%23edf2e8' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M22 26L21 17M27 21L34 22' fill='none' stroke='%23edf2e8' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#172544;--muted:#64748b;--blue:#5978ef;--blue2:#7ba9ff;--mint:#a8f0db;--lav:#dcd7ff;--line:#e4eaf6;--white:#fff;--shadow:0 24px 70px #5b72a31c;--r:26px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);font:15px/1.65 'DM Sans',sans-serif;background:#f8fbff;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 8% 7%,#e5edff 0,transparent 33%),radial-gradient(ellipse at 95% 22%,#e5dcff80 0,transparent 30%),linear-gradient(180deg,#f7fbff,#fff 45%,#f5f9ff)}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1180px,calc(100% - 44px));margin:auto}.topbar{position:sticky;top:0;z-index:20;background:#f8fbffe8;backdrop-filter:blur(20px);border-bottom:1px solid #e5ebf580}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font:800 1.18rem Manrope,sans-serif;letter-spacing:-.06em}.brandmark{width:40px;height:40px;border-radius:15px;display:grid;place-items:center;color:white;font-size:21px;background:linear-gradient(145deg,#8db8ff,#6670ed 65%,#a5a1ff);box-shadow:0 8px 20px #7188ed55}.links{display:flex;align-items:center;gap:25px}.links a{font-size:.9rem;font-weight:700;color:#697791;transition:color .2s}.links a:hover,.links a.active{color:#536ce2}.btn{border:0;border-radius:15px;padding:13px 19px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:800;transition:transform .2s,box-shadow .2s,filter .2s}.btn:hover{transform:translateY(-2px);filter:saturate(1.08)}.primary{color:white;background:linear-gradient(115deg,#6d85f4,#8276ed 65%,#9d91f6);box-shadow:0 12px 28px #7886ec42}.secondary{background:#ffffffc9;color:#33415e;border:1px solid #e1e7f5;box-shadow:0 6px 20px #7c91b00c}.small{padding:9px 13px;border-radius:12px;font-size:.84rem}.hero{padding:66px 0 44px;position:relative}.hero:before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;right:-160px;top:-90px;background:radial-gradient(circle,#d7e8ffb5,transparent 68%);z-index:-1}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border-radius:99px;background:#fff9;border:1px solid #fff;box-shadow:0 6px 24px #8295d010;color:#6578c9;font-size:.75rem;font-weight:800;letter-spacing:.13em}.spark{color:#e6b765;font-size:1rem}h1,h2,h3{font-family:Manrope,sans-serif}h1{font-size:clamp(3.15rem,5.2vw,5.15rem);line-height:1.02;letter-spacing:-.075em;margin:22px 0 20px;max-width:660px}h1 span{background:linear-gradient(100deg,#6278ee 8%,#8c82f2 54%,#55bba8);background-clip:text;color:transparent}.hero-copy{font-size:1.08rem;color:#66738e;max-width:570px;margin:0 0 25px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.microtrust{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;color:#6c7a94;font-size:.81rem}.microtrust span{display:flex;align-items:center;gap:7px}.microtrust b{color:#7187e9}.heroart{position:relative;min-height:485px;border-radius:38px;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#e3efff 0%,#e6e1ff 46%,#e0fbf4 100%);box-shadow:0 30px 90px #6f83c31f;border:1px solid #ffffffb8}.heroart:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 54% 28%,#ffffffd9,transparent 33%),radial-gradient(ellipse at 16% 80%,#b5d8ffb3,transparent 42%),radial-gradient(ellipse at 88% 74%,#b7f4e0a6,transparent 35%)}.sunbeam{position:absolute;width:310px;height:560px;top:-180px;left:35%;transform:rotate(28deg);background:linear-gradient(180deg,#fff9,transparent);filter:blur(20px)}.cloud{position:absolute;background:#ffffffbd;filter:blur(1px);border-radius:100px;box-shadow:0 18px 35px #8296c20c}.cloud.c1{width:250px;height:58px;top:62px;left:-55px}.cloud.c2{width:230px;height:48px;bottom:36px;right:-48px}.cloud:before,.cloud:after{content:"";position:absolute;border-radius:50%;background:inherit}.cloud:before{width:100px;height:100px;left:42px;bottom:10px}.cloud:after{width:72px;height:72px;left:110px;bottom:4px}.orbit{position:absolute;border:1px solid #fff9;border-radius:50%;width:330px;height:330px;top:75px;left:calc(50% - 165px);transform:rotate(-20deg)}.floatcard{position:absolute;z-index:2;background:#ffffffd9;backdrop-filter:blur(15px);border:1px solid #fff;border-radius:23px;padding:12px;box-shadow:0 20px 45px #566b9a25;animation:float 6s ease-in-out infinite}.floatcard img{display:block;object-fit:cover;border-radius:16px;width:155px;height:132px}.floatcard .fcname{font:800 .91rem Manrope,sans-serif;margin:9px 2px 1px}.floatcard .fcmeta{font-size:.74rem;color:#7a86a0;margin:0 2px}.floatcard .fcstatus{position:absolute;top:20px;left:20px;background:#ffffffeb;padding:5px 9px;border-radius:99px;font-size:.67rem;font-weight:800;color:#5574d7}.fc1{top:43px;left:37px;transform:rotate(-7deg)}.fc2{top:138px;right:22px;animation-delay:-2s;transform:rotate(6deg)}.fc2 img{width:145px;height:125px}.fc3{bottom:25px;left:95px;animation-delay:-4s;transform:rotate(4deg)}.fc3 img{width:135px;height:100px}.floatingnote{position:absolute;z-index:3;right:25px;bottom:32px;background:#fffdf0e8;border:1px solid #fff;border-radius:16px;padding:12px 15px;box-shadow:0 12px 30px #6c7c9b1c;font-size:.78rem;font-weight:800;color:#7882a3;transform:rotate(-3deg)}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -9px}}.section{padding:64px 0;position:relative}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:28px}.kicker{font-size:.74rem;font-weight:900;letter-spacing:.16em;color:#7b82dc;text-transform:uppercase}.section h2{font-size:clamp(2rem,3.4vw,3.15rem);line-height:1.08;letter-spacing:-.06em;margin:8px 0 10px}.sectionhead p{max-width:485px;color:var(--muted);margin:0}.truststrip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:20px;border-radius:24px;background:#ffffffb8;border:1px solid #fff;box-shadow:var(--shadow)}.trustitem{display:flex;gap:12px;align-items:center;padding:8px}.trusticon{width:43px;height:43px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(145deg,#edf2ff,#e2fbf5);font-size:1.25rem;flex-shrink:0}.trustitem b{display:block;font-size:.88rem}.trustitem small{display:block;color:#8490a6;font-size:.75rem}.categorygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.catcard{position:relative;height:205px;overflow:hidden;border-radius:23px;background:#e7edff;border:1px solid #fff;box-shadow:0 12px 35px #6378a310;isolation:isolate;cursor:pointer;transition:transform .25s,box-shadow .25s}.catcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.catcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}.catcard:hover img{transform:scale(1.06)}.catcard:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#15213b00 15%,#192441d9 100%)}.catcard .catname{position:absolute;bottom:16px;left:17px;color:white;font:800 1.02rem Manrope,sans-serif}.catcard small{display:block;color:#ffffffbd;font:700 .68rem 'DM Sans',sans-serif;letter-spacing:.12em;margin-bottom:3px}.listingbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}.searchbox{position:relative;flex:1;min-width:220px}.searchbox input{width:100%;padding:14px 15px 14px 44px;border:1px solid #e1e7f3;border-radius:15px;background:#ffffffdb;outline:none}.searchsymbol{position:absolute;left:15px;top:10px;font-size:1.2rem;color:#7c8bb2}.filter{padding:13px 14px;border:1px solid #e1e7f3;border-radius:14px;background:#fff;color:#53617b}.tabs{display:flex;gap:4px;background:#e8edfa;padding:5px;border-radius:14px}.tab{border:0;border-radius:10px;padding:9px 14px;background:transparent;color:#74819c;font-weight:800}.tab.active{background:#fff;color:#536ce2;box-shadow:0 3px 12px #6777a01a}.itemsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.itemcard{background:#ffffffd9;border:1px solid #fff;border-radius:23px;overflow:hidden;box-shadow:0 12px 35px #5e75a00d;transition:transform .22s,box-shadow .22s}.itemcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.itemcover{height:205px;position:relative;overflow:hidden;background:linear-gradient(135deg,#e7edff,#e1f8f1)}.itemcover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.itemcard:hover .itemcover img{transform:scale(1.04)}.typebadge{position:absolute;left:13px;top:13px;font-size:.7rem;font-weight:900;padding:6px 10px;border-radius:99px;background:#fffffff0;color:#566ed2;box-shadow:0 5px 15px #23365c12}.typebadge.found{color:#24876e}.itembody{padding:17px}.itembody h3{font-size:1.04rem;letter-spacing:-.03em;margin:0 0 7px}.meta{display:flex;flex-wrap:wrap;gap:8px;color:#7c88a0;font-size:.79rem}.itembody p{color:#687690;font-size:.87rem;margin:12px 0 15px;min-height:44px}.itemfooter{display:flex;justify-content:space-between;align-items:center;gap:10px}.pill{font-size:.73rem;font-weight:800;color:#6677c9;background:#eef0ff;padding:6px 9px;border-radius:9px}.empty{grid-column:1/-1;padding:40px;border:1px dashed #cdd7ee;border-radius:22px;text-align:center;color:#71809c;background:#ffffffa8}.howgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.howcard{position:relative;padding:26px;background:#ffffffb9;border:1px solid #fff;border-radius:25px;box-shadow:0 15px 40px #6078a00c;overflow:hidden}.howcard:after{content:"";position:absolute;right:-35px;top:-35px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#d9e4ff9c,transparent 70%)}.step{width:45px;height:45px;display:grid;place-items:center;background:linear-gradient(145deg,#e4e9ff,#d7fbef);color:#6877dc;border-radius:16px;font-weight:900}.howcard h3{margin:18px 0 7px;font-size:1.12rem}.howcard p{color:#6e7b94;margin:0;font-size:.92rem}.safety-panel{position:relative;overflow:hidden;padding:42px;border-radius:34px;background:linear-gradient(120deg,#1d2b56,#454b91 55%,#627bc1);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;box-shadow:0 25px 70px #394d8b28}.safety-panel:before{content:"";position:absolute;width:400px;height:400px;right:-100px;top:-200px;border-radius:50%;background:radial-gradient(circle,#a6c8ff6b,transparent 70%)}.safety-panel h2{font-size:clamp(2rem,3vw,2.7rem);letter-spacing:-.06em;line-height:1.1;margin:10px 0}.safety-panel p{color:#d7e0ff;margin:0}.safetylist{display:grid;gap:13px;position:relative}.safetyitem{display:flex;gap:12px;align-items:start;color:#f1f4ff}.check{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:#ffffff1e;color:#b9f6e4;flex-shrink:0;font-weight:900}.messagepanel{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px}.messageintro,.messagebox{padding:25px;border:1px solid #fff;border-radius:25px;background:#ffffffb9;box-shadow:var(--shadow)}.messageintro p{color:#71809a}.messagebox{min-height:220px}.messageempty{text-align:center;padding:34px 15px;color:#7a88a2}.messageempty .big{font-size:2.2rem}.cta{position:relative;overflow:hidden;text-align:center;padding:65px 30px;border-radius:35px;background:linear-gradient(135deg,#dceaff,#e6e0ff 48%,#d9fbef);border:1px solid #fff;box-shadow:var(--shadow)}.cta:before,.cta:after{content:"";position:absolute;border-radius:50%;background:#ffffff70;filter:blur(2px)}.cta:before{width:260px;height:120px;left:-60px;top:20px}.cta:after{width:330px;height:140px;right:-70px;bottom:-40px}.cta h2{font-size:clamp(2.1rem,4vw,3.5rem);letter-spacing:-.07em;line-height:1.05;margin:10px 0}.cta p{color:#687795;max-width:550px;margin:15px auto 23px;position:relative}.cta>*{position:relative;z-index:1}.footer{padding:30px 0 38px;color:#75829b}.footerin{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem}.footnote{font-size:.76rem;color:#9aa4b7;margin-top:14px}.modalback{position:fixed;inset:0;background:#111b38a8;backdrop-filter:blur(9px);z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modalback.show{display:flex}.modal{background:linear-gradient(160deg,#fff,#f6f8ff);border:1px solid #fff;border-radius:27px;padding:26px;width:min(560px,100%);max-height:92vh;overflow:auto;box-shadow:0 35px 100px #0003}.modalhead{display:flex;justify-content:space-between;align-items:start;gap:12px}.modal h2{margin:0 0 5px;letter-spacing:-.05em}.modal p{margin:0;color:#74819a;font-size:.91rem}.close{border:0;background:#eef1fb;border-radius:12px;width:38px;height:38px;font-size:22px;color:#53617c}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-weight:800;font-size:.84rem}.field input,.field select,.field textarea{width:100%;border:1px solid #dfe6f4;border-radius:13px;padding:12px;outline:none;background:#fff}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:#8498f2;box-shadow:0 0 0 3px #8292f21b}.hint{font-size:.77rem;color:#8994a9}.formactions{display:flex;gap:10px;justify-content:flex-end;margin-top:20px}.safetybox{background:#edf8f6;padding:13px;border-radius:14px;color:#387765;font-size:.83rem;margin-top:15px}.toast{position:fixed;bottom:22px;left:50%;translate:-50% 18px;opacity:0;pointer-events:none;z-index:70;background:#26345f;color:white;border-radius:14px;padding:12px 18px;box-shadow:var(--shadow);transition:.25s;max-width:calc(100% - 30px);text-align:center}.toast.show{opacity:1;translate:-50% 0}.hidden{display:none!important}.menuBtn{display:none}.demo-tag{font-size:.7rem;color:#8692aa;font-weight:700}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.heroart{min-height:440px}.truststrip{grid-template-columns:repeat(2,1fr)}.categorygrid{grid-template-columns:repeat(2,1fr)}.safety-panel{grid-template-columns:1fr}.links{gap:13px}.links a{font-size:.82rem}.itemsgrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.wrap{width:calc(100% - 28px)}.nav{height:68px}.links{display:none;position:absolute;top:68px;left:14px;right:14px;padding:17px;background:#fffffff5;border:1px solid #fff;border-radius:19px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{padding:8px 5px}.menuBtn{display:inline-flex;padding:9px 12px}.nav>.primary{display:none}.hero{padding:38px 0 28px}h1{font-size:3.2rem}.heroart{min-height:390px;border-radius:27px}.floatcard{padding:8px}.floatcard img{width:118px;height:103px}.fc1{left:15px;top:36px}.fc2{right:10px;top:130px}.fc2 img{width:112px;height:100px}.fc3{left:48px;bottom:22px}.fc3 img{width:110px;height:82px}.floatingnote{right:10px;bottom:19px;font-size:.67rem}.orbit{width:260px;height:260px;left:calc(50% - 130px);top:80px}.section{padding:45px 0}.sectionhead{align-items:start;flex-direction:column}.truststrip{grid-template-columns:1fr 1fr;padding:12px}.trustitem{padding:5px;gap:8px}.trusticon{width:35px;height:35px;border-radius:12px}.trustitem b{font-size:.77rem}.trustitem small{font-size:.67rem}.categorygrid{gap:10px}.catcard{height:160px;border-radius:18px}.itemsgrid{grid-template-columns:1fr}.itemcover{height:220px}.howgrid{grid-template-columns:1fr}.safety-panel{padding:26px;border-radius:25px}.messagepanel{grid-template-columns:1fr}.cta{padding:48px 18px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.formactions{flex-direction:column-reverse}.formactions .btn{width:100%}.microtrust{gap:10px}.hero-actions .btn{flex:1}.footerin{align-items:flex-start;flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
-
-/* FOUNDLY PRISMATIC FUTURESKY ART DIRECTION */
-:root{--ink:#171b43;--muted:#68718f;--blue:#6878ff;--blue2:#61d8f2;--mint:#78f2d7;--lav:#c8a2ff;--line:#dfe1fb;--shadow:0 26px 75px #34316b25}
-body{background:#f2f0ff;color:#171b43}
-body:before{background:radial-gradient(ellipse at 4% 9%,#a9e8ff99 0,transparent 30%),radial-gradient(ellipse at 93% 17%,#e3a8ff80 0,transparent 29%),radial-gradient(ellipse at 80% 74%,#9df4d55e 0,transparent 28%),linear-gradient(180deg,#f5f1ff 0%,#eaf7ff 37%,#fff0f8 68%,#f0f8ff 100%)}
-.topbar{background:linear-gradient(100deg,#15173ff2,#25265beF 58%,#34285feF);border-bottom:1px solid #ffffff24;box-shadow:0 8px 35px #17174420}
-.brand{color:#fff;letter-spacing:-.055em;text-shadow:0 2px 20px #9e9dff55}
-.brandmark{width:43px;height:43px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#69f1e4 0%,#678bff 36%,#a66dff 68%,#ff91ca 100%);box-shadow:0 0 0 1px #ffffff70 inset,0 7px 0 #16174355,0 12px 26px #8c73ff70;transform:perspective(100px) rotateX(7deg);position:relative;overflow:hidden}
-.brandmark:after{content:"";position:absolute;inset:0;background:linear-gradient(130deg,#ffffff70,transparent 38%,#ffddff25 65%,transparent);pointer-events:none}
-.brandmark svg{width:100%;height:100%;filter:drop-shadow(0 2px 3px #403b9c55);position:relative;z-index:1}
-.links a{color:#d6ddff}.links a:hover,.links a.active{color:#83f6e2;text-shadow:0 0 18px #83f6e277}
-.topbar .primary{background:linear-gradient(110deg,#57dccc,#6c8cff 48%,#ba7aff);box-shadow:0 9px 26px #8274ff50,0 1px 0 #ffffff70 inset;color:#fff}
-.hero{padding:74px 0 58px;background:radial-gradient(ellipse at 78% 12%,#745fe85c 0,transparent 36%),radial-gradient(ellipse at 9% 88%,#18c7c355 0,transparent 32%),linear-gradient(118deg,#141638 0%,#25265c 42%,#4a327d 72%,#173f63 100%);color:#f9f8ff;isolation:isolate;overflow:hidden}
-.hero:before{width:720px;height:720px;right:-210px;top:-240px;background:radial-gradient(circle,#b38dff42 0,#4f87ff1b 35%,transparent 70%);z-index:-1}
-.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(125deg,transparent 0 95px,#ffffff05 96px 97px,transparent 98px 180px),radial-gradient(ellipse at 52% -12%,#ffffff19,transparent 42%)}
-.hero .eyebrow{background:#ffffff12;border-color:#ffffff32;color:#dce6ff;box-shadow:0 8px 32px #06082225;backdrop-filter:blur(12px)}
-.hero .spark{color:#8ff9e6;text-shadow:0 0 14px #8ff9e6}
-.hero h1{color:#fff;text-shadow:0 4px 30px #070b2b42}
-.hero h1 span{background:linear-gradient(95deg,#8cf5e7 0%,#a7c4ff 35%,#e1a9ff 67%,#ffbad8 100%);background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 5px 18px #a68aff25)}
-.hero-copy{color:#d4dcf8}.microtrust{color:#c2cbed}.microtrust b{color:#83f4e2}
-.hero .secondary{background:#ffffff14;color:#fff;border:1px solid #ffffff3b;box-shadow:0 8px 24px #06082220;backdrop-filter:blur(12px)}
-.hero .primary{background:linear-gradient(110deg,#55e0d0,#6487ff 48%,#b879ff);box-shadow:0 12px 32px #7b6bff55,0 1px 0 #ffffff80 inset}
-.heroart{background:radial-gradient(ellipse at 48% 35%,#fff8 0,transparent 30%),linear-gradient(145deg,#6ce5e0 0%,#92a8ff 28%,#c19aff 56%,#ffb8dc 78%,#8cebd7 100%);border:1px solid #ffffffad;box-shadow:0 35px 90px #060c334c,0 0 0 1px #b1c4ff55 inset}
-.heroart:before{background:radial-gradient(ellipse at 54% 28%,#ffffffeb,transparent 30%),radial-gradient(ellipse at 16% 80%,#8edbffcc,transparent 42%),radial-gradient(ellipse at 88% 74%,#a5ffe4d9,transparent 35%),linear-gradient(130deg,#6f9bff16,#ff9ddc30)}
-.orbit{border-color:#ffffffb5;box-shadow:0 0 30px #ffffff36,inset 0 0 30px #ffffff12}
-.floatcard{background:linear-gradient(145deg,#ffffffed,#f5f0ffdf);border-color:#ffffff;box-shadow:0 22px 45px #2b246b35,0 1px 0 #ffffff inset}
-.floatcard .fcstatus{background:linear-gradient(100deg,#e5fff8,#f0e7ff);color:#554fc1;box-shadow:0 4px 16px #39307512}
-.floatingnote{background:linear-gradient(120deg,#fff8dcf2,#fce6ffed);color:#6652a4;border:1px solid #ffffff;box-shadow:0 14px 32px #2d28672a}
-.truststrip{background:linear-gradient(110deg,#ffffffd9,#edf2ffd9,#f8eaffd9);border-color:#fff;box-shadow:0 18px 48px #5850a017}
-.trusticon{background:linear-gradient(145deg,#9af4e8,#a9c9ff 48%,#e6b9ff);color:#29336d;box-shadow:0 7px 18px #8291e72b,0 1px 0 #ffffffb8 inset}
-.section{background:transparent}
-#browse{background:linear-gradient(135deg,#f4f2ff 0%,#eaf7ff 48%,#fdf0fa 100%);border-top:1px solid #ffffffa8;border-bottom:1px solid #ffffffa8}
-#browse .searchbox input,#browse .filter{background:#ffffffdc;border-color:#d7dcfb;box-shadow:0 7px 22px #7169b00a}
-#browse .tabs{background:#dcdfff}
-#browse .tab.active{background:linear-gradient(120deg,#fff,#effcff);color:#555bd1}
-.itemcard{background:linear-gradient(150deg,#fff,#f9f7ff);border-color:#ffffff;box-shadow:0 15px 38px #6c62a51b}
-.itemcover{background:linear-gradient(135deg,#a3f2e8,#b4c7ff 48%,#e7b6ff)}
-.typebadge{background:linear-gradient(100deg,#ffffffef,#e9faffef);color:#5b56c6}
-.pill{background:linear-gradient(100deg,#e1fcf6,#e8e8ff,#f7e5ff);color:#5654a8}
-#categories{background:radial-gradient(ellipse at 12% 0%,#5267ce7a,transparent 38%),radial-gradient(ellipse at 88% 100%,#b657d657,transparent 38%),linear-gradient(125deg,#17183f,#28265f 48%,#3b2b68);color:#fff}
-#categories .kicker{color:#9af3e6}#categories .sectionhead p{color:#d2d8fa}#categories .demo-tag{color:#d3d9ff}
-.catcard{border-color:#ffffff5c;box-shadow:0 18px 42px #090b2c5c}
-.catcard:after{background:linear-gradient(180deg,#14173a05 4%,#17153ac9 100%),linear-gradient(130deg,#6b77ff20,#ef8bd933)}
-#how{background:linear-gradient(120deg,#f5efff,#edf8ff 48%,#e9fff8)}
-.howcard{background:linear-gradient(145deg,#ffffffd9,#f3f0ffdc);border-color:#ffffff;box-shadow:0 18px 45px #6652a51a}
-.step{background:linear-gradient(145deg,#63e6d3,#84a6ff 55%,#c68cff);color:#fff;box-shadow:0 8px 20px #8175e944,0 1px 0 #ffffff99 inset}
-#safety{background:linear-gradient(120deg,#e9e7ff,#dff7ff 50%,#e8fff6)}
-.safety-panel{background:radial-gradient(ellipse at 85% 12%,#ba8bff55,transparent 34%),radial-gradient(ellipse at 10% 100%,#35d9ca35,transparent 40%),linear-gradient(120deg,#16173f,#302967 48%,#174d67);border:1px solid #ffffff6b;box-shadow:0 30px 75px #27235732}
-#messages{background:linear-gradient(135deg,#fceeff,#eff0ff 48%,#e4fbff)}
-.messageintro,.messagebox{background:linear-gradient(145deg,#ffffffdf,#f5f0ffdc);border-color:#fff}
-.cta{background:radial-gradient(ellipse at 15% 0%,#ffffff80,transparent 35%),linear-gradient(120deg,#62dccc,#8ea4ff 36%,#be8bff 68%,#ffafd9);color:#171842;box-shadow:0 25px 65px #7b67d63b;border-color:#ffffffd9}
-.cta .kicker{color:#4949a8}.cta p{color:#343d70}.cta .primary{background:linear-gradient(110deg,#17183f,#4848a9 60%,#7554c9);box-shadow:0 12px 28px #26225b44}.cta .secondary{background:#ffffffc9;color:#282652;border-color:#ffffff}
-.footer{background:linear-gradient(110deg,#131535,#242454 58%,#352553);color:#d5dcff;border-top:1px solid #ffffff22}
-.footer .brand{color:#fff}.footnote{color:#a8b1d6}.footlinks a:hover{color:#8ff5e6}
-.modal{background:linear-gradient(145deg,#fff,#f0edff 55%,#e7fbff);border-color:#fff;box-shadow:0 35px 100px #090b2e55}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:#7f83ff;box-shadow:0 0 0 3px #8b7bff27}
-.safetybox{background:linear-gradient(100deg,#dffbf4,#e9eaff);color:#356b77}
-.primary{background:linear-gradient(110deg,#5bdfd1,#7187ff 48%,#b778f1);box-shadow:0 12px 28px #7975ed45,0 1px 0 #ffffff80 inset}
-@media(max-width:620px){.topbar .links{background:linear-gradient(145deg,#1a1b49f7,#30275ff7);border-color:#ffffff24}.topbar .links a{color:#e4e8ff}.hero{padding-top:46px}.heroart{box-shadow:0 25px 55px #060c3342}}
-
-
-/* FOUNDLY — restrained celestial / botanical visual system */
-:root{--ink:#182536;--muted:#687786;--blue:#476c78;--blue2:#93b7b1;--mint:#c3d4c6;--lav:#b9c4d1;--line:#dce3e5;--white:#fff;--shadow:0 22px 55px #17283a12;--r:24px}
-body{background:#f4f6f4;color:#182536}
-body:before{background:radial-gradient(ellipse at 90% 0%,#dce5e6 0,transparent 31%),linear-gradient(180deg,#f4f6f4,#fbfcfa 54%,#eef2f0)}
-.topbar{background:#111d2df2;border-bottom:1px solid #ffffff15;box-shadow:0 8px 30px #101c2b18}
-.brand{color:#f4f5ef;text-shadow:none;letter-spacing:-.045em}
-.brandmark{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#1c3040,#101a28);box-shadow:0 0 0 1px #ffffff17 inset,0 8px 22px #07111d42;transform:none;overflow:hidden}
-.brandmark:after{background:linear-gradient(130deg,#ffffff12,transparent 48%)}
-.links a{color:#b9c5cc}.links a:hover,.links a.active{color:#c4d6ca}
-.topbar .primary,.primary{background:linear-gradient(135deg,#4d777a,#365d68);color:#fff;box-shadow:0 8px 20px #1a3e471c,0 1px 0 #ffffff20 inset}
-.secondary{background:#fff;color:#314552;border-color:#dce4e3;box-shadow:0 5px 16px #1b2d3808}
-.hero{padding:74px 0 58px;background:radial-gradient(ellipse at 80% 8%,#38556a66 0,transparent 35%),radial-gradient(ellipse at 15% 95%,#54766a42 0,transparent 34%),linear-gradient(125deg,#101b2a 0%,#172b3a 54%,#203b49 100%);color:#f2f4f0}
-.hero:before{background:radial-gradient(circle,#9dbab21a 0,transparent 70%)}
-.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(1px 1px at 18% 24%,#ffffff75 0,transparent 2px),radial-gradient(1px 1px at 77% 16%,#ffffff65 0,transparent 2px),radial-gradient(1px 1px at 59% 78%,#ffffff55 0,transparent 2px),radial-gradient(1px 1px at 91% 57%,#ffffff55 0,transparent 2px)}
-.hero .eyebrow{background:#ffffff0b;border-color:#ffffff20;color:#c4d3d4;box-shadow:none}
-.hero h1 span{background:linear-gradient(100deg,#d4dfd5 0%,#9fbdb7 56%,#b7c7d4 100%);background-clip:text;-webkit-background-clip:text;color:transparent;filter:none}
-.hero-copy{color:#c0ccd1}.microtrust{color:#c0ccd1}.microtrust b{color:#b7cec2}.spark{color:#b9c9b6}
-.hero .secondary{background:#ffffff0d;color:#edf1ed;border-color:#ffffff28;box-shadow:none}
-.hero .primary{background:linear-gradient(135deg,#789b8d,#496f78);box-shadow:0 10px 24px #08192355}
-.heroart{background:radial-gradient(ellipse at 50% 30%,#496579 0%,transparent 35%),linear-gradient(145deg,#172b3b 0%,#233b4a 55%,#263f42 100%);border:1px solid #ffffff20;box-shadow:0 28px 70px #06101d45}
-.heroart:before{background:radial-gradient(ellipse at 52% 28%,#c8d6d51c,transparent 35%),radial-gradient(ellipse at 14% 82%,#91b6b222,transparent 42%),radial-gradient(ellipse at 90% 74%,#7c9f9b24,transparent 35%)}
-.sunbeam{background:linear-gradient(180deg,#d9e6e51a,transparent)}
-.cloud{background:#c4d1d12c;box-shadow:none}.orbit{border-color:#d9e5e52c}
-.floatcard{background:#f7f8f3f2;border-color:#ffffff75;box-shadow:0 18px 38px #07111d38}
-.floatcard .fcstatus{background:#e4ece6;color:#3d6260;box-shadow:none}.floatingnote{background:#e8ece4;color:#405b5a;border-color:#ffffff70;box-shadow:0 10px 25px #07111d2a}
-.eyebrow{color:#4e7778;background:#edf2ee;border-color:#e3e9e4;box-shadow:none}
-.kicker{color:#567b78}.section h2{color:#1b2a38}
-.truststrip{background:#fff;border-color:#e7ece8;box-shadow:0 12px 35px #17283a08}
-.trusticon{background:#e9efea;color:#426964;box-shadow:none}
-#browse{background:#eef2ef;border-top:1px solid #e2e8e3;border-bottom:1px solid #e2e8e3}
-#browse .searchbox input,#browse .filter{background:#fff;border-color:#dce4e0;box-shadow:none}
-#browse .tabs{background:#e1e8e3}.tab.active{color:#365f60;box-shadow:0 2px 8px #1b30220d}
-.itemcard{background:#fff;border-color:#e5ebe7;box-shadow:0 10px 28px #17283a0b}.itemcover{background:linear-gradient(135deg,#dfe8e2,#dfe7eb)}
-.typebadge{background:#f7f8f4;color:#456d6c;box-shadow:none}.typebadge.found{color:#3f7463}.pill{background:#e9f0ea;color:#476b65}
-#categories{background:radial-gradient(ellipse at 84% 0%,#354f6255,transparent 36%),linear-gradient(125deg,#111d2c,#192e3d 58%,#233b43);color:#fff}
-#categories .section h2{color:#f2f4ef}#categories .sectionhead p{color:#c1cbd0}#categories .kicker{color:#b4c9be}
-.catcard{border-color:#ffffff18;box-shadow:0 12px 30px #07121c28}.catcard:after{background:linear-gradient(180deg,#101b2a05 5%,#101b2ad9 100%)}
-#how{background:#f6f7f4}.howcard{background:#fff;border-color:#e4eae5;box-shadow:0 12px 30px #17283a08}.howcard:after{background:radial-gradient(circle,#dce7df66,transparent 70%)}
-.step{background:#e6ede7;color:#3e6b65;box-shadow:none}
-#safety{background:#edf1ee}.safety-panel{background:radial-gradient(ellipse at 85% 12%,#90aaa92b,transparent 34%),linear-gradient(120deg,#132130,#1a3441 60%,#24464a);border:1px solid #ffffff15;box-shadow:0 24px 60px #17283a1c}
-#messages{background:#f5f7f4}.messageintro,.messagebox{background:#fff;border-color:#e5ebe7}
-.cta{background:radial-gradient(ellipse at 82% 0%,#d5e2d85c,transparent 40%),linear-gradient(125deg,#e9efea,#e6ecec);color:#182b37;border-color:#e1e8e2;box-shadow:0 18px 45px #17283a0c}.cta:before,.cta:after{background:#ffffff55}.cta .kicker{color:#507a73}.cta p{color:#60717a}.cta .primary{background:linear-gradient(135deg,#496f73,#2f535e);box-shadow:0 8px 20px #1a3e471c}.cta .secondary{background:#fff;color:#2d4852;border-color:#dce5df}
-.footer{background:#101b29;color:#c1cbd0;border-top:1px solid #ffffff12}.footnote{color:#8e9da5}
-.modal{background:#f9faf7;border-color:#fff;box-shadow:0 30px 85px #07111d55}.safetybox{background:#e7efe8;color:#426b5d}.field input:focus,.field select:focus,.field textarea:focus{border-color:#82a69b;box-shadow:0 0 0 3px #82a69b20}
-@media(max-width:620px){.topbar .links{background:#142331f7;border-color:#ffffff20}.topbar .links a{color:#d7e0df}.hero{padding-top:45px}}
-
-
-/* FOUNDLY — premium celestial motion and editorial details */
-:root{--ink:#182536;--muted:#687786;--blue:#476c78;--blue2:#93b7b1;--mint:#c3d4c6;--lav:#b9c4d1;--line:#dce3e5;--shadow:0 22px 55px #17283a12}
-.hero{background:radial-gradient(ellipse at 80% 12%,#6b87972b,transparent 38%),linear-gradient(120deg,#111d2d,#1a2b3a 65%,#263d49);color:#f5f6f2}
-.hero:before{background:radial-gradient(circle,#6b879729,transparent 68%)}
-.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(#d7e2df88 .7px,transparent .7px);background-size:34px 34px;opacity:.17;mask-image:linear-gradient(90deg,transparent,#000 45%,#000)}
-.hero h1 span{background:linear-gradient(100deg,#d9e5d9,#a9c1c3 65%,#c3cbd7);background-clip:text;-webkit-background-clip:text;color:transparent;filter:none}
-.hero .eyebrow{background:#ffffff0b;border-color:#ffffff18;color:#d0ddd8;box-shadow:none}.hero .spark{color:#c5d6c8}.hero-copy{color:#c6d0d6}.microtrust{color:#b6c5cb}.microtrust b{color:#b9d1c2}
-.hero .primary,.topbar .primary,.primary{background:linear-gradient(135deg,#567c78,#3e6264);box-shadow:0 10px 25px #0b171b28;color:#fff}.hero .secondary{background:#ffffff0b;border-color:#ffffff25;color:#f5f6f2;box-shadow:none}
-.heroart{background:radial-gradient(ellipse at 50% 45%,#526b705e,transparent 40%),linear-gradient(145deg,#243b48,#152431 68%,#1c3138);border-color:#ffffff1b;box-shadow:0 30px 80px #09131d52,0 0 0 1px #ffffff08 inset}
-.heroart:before{background:radial-gradient(ellipse at 50% 35%,#c6d7ce20,transparent 35%),radial-gradient(ellipse at 16% 80%,#8ea9b31b,transparent 42%),radial-gradient(ellipse at 88% 74%,#a7bda81a,transparent 35%)}
-.orbit{border-color:#c6d9d02e;box-shadow:0 0 45px #b5c9c40b,inset 0 0 30px #ffffff05}.cloud{background:#d8e3df12;box-shadow:none}.floatcard{background:#f5f5f0f2;border-color:#ffffff70;box-shadow:0 25px 60px #0209104d;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}.floatcard:hover{transform:translateY(-9px) rotateY(-8deg) rotateX(4deg) scale(1.025);box-shadow:0 35px 70px #02091060}.floatcard .fcstatus{background:#e9efea;color:#38595a}.floatingnote{background:#f0f2ec;color:#425b5b;border-color:#ffffff70;box-shadow:0 14px 32px #02091030}
-.sectionhead .kicker,.kicker{color:#587c78}.truststrip{background:#ffffffd9;border-color:#e5eae5;box-shadow:0 18px 48px #17283a08}.trusticon{background:#e9efea;color:#476c65;box-shadow:none}
-#categories{background:#172735;color:#f4f5ef}#categories .kicker{color:#b7d0c1}#categories .sectionhead p{color:#c1cdd0}.catcard{border-color:#ffffff22;box-shadow:0 18px 42px #08111b40}.catcard:after{background:linear-gradient(180deg,#101e2b00 5%,#101e2be0 100%)}
-#how{background:#edf1ee}#how .step{background:#dce7de;color:#3e655d;box-shadow:none}#how .howcard{background:#fbfcf9;border-color:#e0e7e1;box-shadow:0 14px 35px #152a2208}#safety{background:#e7ecea}#safety .safety-panel{background:radial-gradient(ellipse at 90% 0%,#a5beb324,transparent 35%),linear-gradient(125deg,#172735,#203844);border-color:#ffffff16;box-shadow:0 30px 75px #17273522}#messages{background:#f4f5f1}#messages .messageintro,#messages .messagebox{background:#fff;border-color:#e2e8e3}#messages .messageicon{background:#e8efea;color:#416860}.cta{background:linear-gradient(120deg,#e3eae3,#e7ecee 60%,#dfe8e6);color:#1b2b36;box-shadow:0 25px 65px #17273512;border-color:#fff}.cta .kicker{color:#4c736d}.cta p{color:#63747a}.cta .primary{background:#1c303b;color:white}.cta .secondary{background:#ffffffb8;color:#263e46;border-color:#d9e2de}.footer{background:#111d2b;color:#d2dcd9;border-top:1px solid #ffffff14}.footer .brand{color:#f4f5ef}.footnote{color:#a9b8ba}.footlinks a:hover{color:#b7d0c1}
-.constellation{background:linear-gradient(180deg,#f4f6f3,#eaf0ed);overflow:hidden}.constellation .sectionhead{align-items:center}.constellation .sectionhead p{max-width:570px}.orbit-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;perspective:1400px;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.75,.25,1)}.orbit-gallery.rotated{transform:rotateY(8deg) rotateX(1deg)}.flipcard{border:0;background:transparent;padding:0;text-align:left;min-width:0;height:390px;perspective:1200px;cursor:pointer;outline-offset:5px}.flipinner{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1);border-radius:25px}.flipcard:hover .flipinner{transform:translateY(-5px) rotateY(-4deg)}.flipcard.turned .flipinner{transform:rotateY(180deg)}.flipfront,.flipback{position:absolute;inset:0;display:block;overflow:hidden;border-radius:25px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 25px 55px #172c3318;border:1px solid #ffffffd9}.flipfront{background:#172735}.flipfront img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.78);transition:transform .8s,filter .8s}.flipcard:hover .flipfront img{transform:scale(1.055);filter:saturate(.95)}.flipfront:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#10202a00 32%,#10202ac9 100%)}.imagecaption{position:absolute;z-index:1;left:23px;right:20px;bottom:22px;color:#fff;display:flex;flex-direction:column;gap:5px}.imagecaption small{font-size:.67rem;letter-spacing:.16em;color:#d1e0d6;font-weight:800}.imagecaption b{font:700 1.45rem Manrope,sans-serif;letter-spacing:-.045em}.imagecaption span{font-size:.78rem;color:#d7e0df}.flipback{transform:rotateY(180deg);background:radial-gradient(circle at 100% 0%,#dce7df 0,transparent 42%),#172735;color:#f4f6f0;padding:30px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px}.backnumber{font:500 3.5rem Manrope,sans-serif;letter-spacing:-.08em;color:#a8c1b2}.flipback b{font:700 1.45rem Manrope,sans-serif;letter-spacing:-.04em}.flipback>span:not(.backnumber){color:#d2ddda;font-size:.94rem;line-height:1.75}.flipback .backhint{border-top:1px solid #ffffff26;padding-top:16px;color:#b9d0c5!important;font-size:.82rem!important}.gallery-foot{display:flex;align-items:center;justify-content:center;gap:10px;color:#75847f;font-size:.82rem;margin-top:22px}.orbit-dot{width:7px;height:7px;border-radius:50%;background:#5e857b;box-shadow:0 0 0 5px #5e857b19}.foot-divider{color:#b1bcb6}.listingbar .searchbox input,.listingbar .filter{border-color:#dbe4de;box-shadow:none}.tabs{background:#e7ece8}.tab.active{color:#3e6862}.itemcard{background:#fff;border-color:#e4eae5;box-shadow:0 12px 35px #17283a09}.typebadge{background:#f2f5f0;color:#4d6e69}.pill{background:#eaf0ea;color:#4c6b64}
-@media(max-width:800px){.orbit-gallery{gap:14px}.flipcard{height:330px}.flipback{padding:22px}.imagecaption{left:16px;bottom:17px}.imagecaption b{font-size:1.15rem}.flipback b{font-size:1.15rem}.flipback>span:not(.backnumber){font-size:.84rem}}
-@media(max-width:620px){.orbit-gallery{grid-template-columns:1fr;gap:16px}.flipcard{height:340px}.constellation .sectionhead{gap:16px}.constellation .sectionhead .btn{align-self:flex-start}.gallery-foot{flex-wrap:wrap;text-align:center}.heroart{min-height:430px}}
-@media(prefers-reduced-motion:reduce){.flipinner,.orbit-gallery,.floatcard,.flipfront img{transition:none!important}}
-
-</style>
-<style id="foundly-red-orange-aurora-3d">
-/* FOUNDLY: ember nebula + emerald aurora, with user-controlled 3D */
-:root{--ink:#18242c;--muted:#66777b;--blue:#426c65;--blue2:#9bbca5;--mint:#b8d4b8;--lav:#a9b9c2;--line:#dce5df;--shadow:0 24px 65px #07131c18}
-body:before{background:radial-gradient(ellipse at 12% 13%,#f4e2d7 0,transparent 30%),radial-gradient(ellipse at 87% 52%,#dce9df 0,transparent 34%),linear-gradient(180deg,#f4f4ef,#fbfaf6 50%,#eef2ec)}
-.hero{background:radial-gradient(ellipse at 18% 8%,#d75b36a8 0,transparent 34%),radial-gradient(ellipse at 75% 4%,#b6db8c55 0,transparent 27%),radial-gradient(ellipse at 72% 92%,#1c755d88 0,transparent 38%),linear-gradient(125deg,#180f18 0%,#2b1720 37%,#172b2b 72%,#101f28 100%);isolation:isolate;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:-20%;width:auto;height:auto;right:auto;top:auto;border-radius:0;z-index:-1;background:radial-gradient(ellipse at 24% 24%,#ff744d55 0,transparent 25%),radial-gradient(ellipse at 72% 48%,#80e5a044 0,transparent 30%),radial-gradient(ellipse at 62% 80%,#3bbd8c36 0,transparent 32%);filter:blur(20px);animation:nebulaDrift 18s ease-in-out infinite alternate}
-.hero:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(1px 1px at 14% 27%,#fff9 0,transparent 2px),radial-gradient(1.5px 1.5px at 44% 13%,#fff9 0,transparent 2px),radial-gradient(1px 1px at 76% 22%,#fff8 0,transparent 2px),radial-gradient(1px 1px at 91% 68%,#fff8 0,transparent 2px),radial-gradient(1px 1px at 61% 83%,#fff7 0,transparent 2px),linear-gradient(115deg,transparent 35%,#a2e8bd0b 54%,transparent 68%)}
-@keyframes nebulaDrift{from{transform:translate3d(-2%,1%,0) scale(1) rotate(-2deg)}to{transform:translate3d(3%,-2%,0) scale(1.12) rotate(3deg)}}
-.hero h1 span{background:linear-gradient(100deg,#ffb18a 0%,#f3c0a5 34%,#b9e4bd 74%,#e4eddc);background-clip:text;-webkit-background-clip:text;color:transparent}
-.hero .eyebrow{color:#e5c9bb;background:#ffffff0b;border-color:#ffffff24}.hero .spark{color:#aee5b8}.hero-copy,.microtrust{color:#d7d5ce}.microtrust b{color:#a7dfb1}
-.hero .primary{background:linear-gradient(130deg,#e16c48,#b94f3a 55%,#3f7665);box-shadow:0 12px 32px #e16c4828}.topbar .primary,.primary{background:linear-gradient(130deg,#49796a,#315b55);color:white}
-.heroart{cursor:grab;touch-action:pan-y;user-select:none;transform-style:preserve-3d;will-change:transform;background:radial-gradient(ellipse at 30% 12%,#ef6b45 0%,transparent 34%),radial-gradient(ellipse at 73% 26%,#a9df9a 0%,transparent 35%),radial-gradient(ellipse at 68% 83%,#2d9876 0%,transparent 38%),linear-gradient(145deg,#20151d,#172d2b 68%,#101f2b);border:1px solid #c5e2c32b;box-shadow:0 32px 90px #09131c65,inset 0 0 60px #a3d8b20b;transition:box-shadow .3s}
-.heroart:before{inset:-10%;background:radial-gradient(ellipse at 28% 25%,#ff79534d 0,transparent 32%),radial-gradient(ellipse at 74% 38%,#b5f1a955 0,transparent 35%),radial-gradient(ellipse at 53% 78%,#35b98b55 0,transparent 38%);filter:blur(10px);animation:auroraFlow 12s ease-in-out infinite alternate}
-@keyframes auroraFlow{0%{transform:translate(-2%,1%) skewY(-4deg) scale(1)}100%{transform:translate(3%,-2%) skewY(4deg) scale(1.12)}}
-.heroart:after{content:"DRAG TO EXPLORE  ·  3D SPACE";position:absolute;z-index:4;right:17px;top:17px;padding:7px 10px;border:1px solid #ffffff2b;border-radius:99px;background:#09151bb5;color:#e2eddf;font-size:.59rem;font-weight:800;letter-spacing:.13em;pointer-events:none;backdrop-filter:blur(12px)}
-.heroart.dragging{cursor:grabbing;box-shadow:0 38px 100px #09131c80,inset 0 0 80px #a3d8b218}
-.heroart .orbit{border-color:#d7e9d04d;box-shadow:0 0 35px #8bd3a019,inset 0 0 30px #c7ebc80b;transform-style:preserve-3d}
-.heroart .cloud{background:#b8dfc21a;filter:blur(5px)}.heroart .sunbeam{background:linear-gradient(180deg,#ffb08a25,transparent)}
-.floatcard{transform-style:preserve-3d;backface-visibility:hidden;transition:box-shadow .25s;will-change:transform}.floatcard img{user-select:none;-webkit-user-drag:none;filter:saturate(.84) contrast(1.03)}.floatcard .fcstatus{color:#355f50;background:#e9f1e7}.floatingnote{background:#e6eee0;color:#345c4e}
-.constellation{background:radial-gradient(ellipse at 12% 0%,#efddd2 0,transparent 28%),radial-gradient(ellipse at 86% 68%,#d5e8d7 0,transparent 32%),linear-gradient(180deg,#f2f2eb,#e9f0e9)}
-.orbit-gallery{perspective:1600px;touch-action:pan-y;cursor:grab}.orbit-gallery.dragging{cursor:grabbing}.orbit-gallery.rotated{transform:rotateY(22deg) rotateX(-3deg)}.flipcard{transform-style:preserve-3d;transition:filter .3s}.flipcard:hover{filter:drop-shadow(0 25px 30px #183a2a20)}.flipfront img{filter:saturate(.82) contrast(1.04)}
-#categories{background:radial-gradient(ellipse at 16% 0%,#c65d3c40,transparent 35%),radial-gradient(ellipse at 82% 70%,#5bbd8a36,transparent 35%),linear-gradient(125deg,#151a20,#1c2b2b 58%,#172a29)}
-#how{background:#f2f1eb}#safety{background:#e8eee7}#messages{background:#f4f1ec}.cta{background:radial-gradient(ellipse at 90% 0%,#bddbc155,transparent 40%),radial-gradient(ellipse at 0% 90%,#e8a68a44,transparent 38%),linear-gradient(125deg,#eee9df,#e5eee6)}
-@media(max-width:620px){.heroart{touch-action:pan-y}.heroart:after{font-size:.5rem;right:10px;top:10px}.floatcard{animation-duration:8s}}
-@media(prefers-reduced-motion:reduce){.hero:before,.heroart:before{animation:none!important}}
-</style>
-
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  </style>
 </head>
 <body>
-<header class="topbar"><div class="wrap nav"><a class="brand" href="#home" aria-label="FOUNDLY home"><span class="brandmark" aria-hidden="true"><svg viewBox="0 0 48 48" role="img" aria-label="FOUNDLY leaf mark"><defs><linearGradient id="leafShade" x1="9" y1="38" x2="37" y2="8" gradientUnits="userSpaceOnUse"><stop stop-color="#789b8b"/><stop offset="1" stop-color="#c1d1bd"/></linearGradient></defs><path d="M8 35C8 17 19 7 39 7C39 26 29 39 11 39" fill="url(#leafShade)" stroke="#e9f0e8" stroke-opacity=".55" stroke-width=".8"/><path d="M10 38C18 30 26 21 36 11" fill="none" stroke="#f4f3e9" stroke-width="1.7" stroke-linecap="round"/><path d="M21 27L20 18M27 21L34 22M16 32L15 25" fill="none" stroke="#f4f3e9" stroke-opacity=".9" stroke-width="1.2" stroke-linecap="round"/><circle cx="37" cy="9" r="1.4" fill="#d7c79b"/></svg></span> FOUNDLY</a><nav class="links" id="navlinks"><a href="#home">Home</a><a href="#browse">Browse</a><a href="#how">How It Works</a><a href="#safety">Safety</a><a href="#messages">Messages</a></nav><button class="btn secondary menuBtn" onclick="toggleMenu()" aria-label="Open navigation">☰</button><button class="btn primary" onclick="openReport('lost')">＋ Report an Item</button></div></header>
-<main>
-<section class="hero" id="home"><div class="wrap hero-grid"><div><div class="eyebrow"><span class="spark">✦</span> A LITTLE HOPE · A WAY HOME</div><h1>Lost something precious? <span>Let’s bring it home.</span></h1><p class="hero-copy">FOUNDLY is a calm, community-powered place where lost belongings find their way back. Search recent reports from your community, or share what you’ve found in a few gentle steps.</p><div class="hero-actions"><button class="btn primary" onclick="document.getElementById('browse').scrollIntoView({behavior:'smooth'})">⌕ Find My Item <span>↗</span></button><button class="btn secondary" onclick="openReport('found')">♡ I Found Something</button></div><div class="microtrust"><span><b>✧</b> Privacy-first reports</span><span><b>✧</b> Private messages (demo)</span><span><b>✧</b> Powered by kind neighbours</span></div></div>
-<div class="heroart" aria-label="Floating item cards in a dreamy sky"><div class="sunbeam"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="orbit"></div><article class="floatcard fc1"><span class="fcstatus">Recently found</span><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=500&q=85" alt="Wireless headphones"><div class="fcname">Wireless headphones</div><p class="fcmeta">Electronics · Demo item</p></article><article class="floatcard fc2"><span class="fcstatus">Looking for its owner</span><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=85" alt="Travel backpack"><div class="fcname">Travel backpack</div><p class="fcmeta">Bags · Demo item</p></article><article class="floatcard fc3"><span class="fcstatus">A little hope</span><img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=500&q=85" alt="Everyday accessories"><div class="fcname">Everyday essentials</div><p class="fcmeta">Small things matter</p></article><div class="floatingnote">☁ A way back home</div></div></div></section>
-<section class="wrap" style="padding:10px 0 28px"><div class="truststrip"><div class="trustitem"><span class="trusticon">⌕</span><div><b>Simple discovery</b><small>Search with ease</small></div></div><div class="trustitem"><span class="trusticon">✧</span><div><b>Easy reporting</b><small>A few gentle steps</small></div></div><div class="trustitem"><span class="trusticon">♡</span><div><b>Community-powered</b><small>Kindness connects us</small></div></div><div class="trustitem"><span class="trusticon">♧</span><div><b>Privacy-conscious</b><small>Share only what you need</small></div></div></div></section>
-
-<section class="section constellation" id="fieldnotes">
- <div class="wrap">
-  <div class="sectionhead">
-   <div><div class="kicker">THE FOUNDLY FIELD GUIDE</div><h2>Small things. Big meaning.</h2><p>Keys, keepsakes, headphones, the notebook full of ideas. A lost item is rarely just an object — it belongs to someone’s everyday story.</p></div>
-   <button class="btn secondary" type="button" onclick="rotateCollection()">⟳ Rotate collection</button>
-  </div>
-  <div class="orbit-gallery" id="orbitGallery" aria-label="Interactive 3D item gallery">
-   <button class="flipcard" type="button" aria-label="Flip the everyday essentials card" onclick="this.classList.toggle('turned')">
-    <span class="flipinner"><span class="flipfront"><img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=85" alt="Notebook and everyday essentials"><span class="imagecaption"><small>01 / EVERYDAY</small><b>The little essentials</b><span>Tap to discover ↗</span></span></span><span class="flipback"><span class="backnumber">01</span><b>Everyday essentials</b><span>Glasses, keys, bottles and small things that quietly go everywhere with us.</span><span class="backhint">A clear description helps the right owner recognise an item.</span></span></span>
-   </button>
-   <button class="flipcard" type="button" aria-label="Flip the things we carry card" onclick="this.classList.toggle('turned')">
-    <span class="flipinner"><span class="flipfront"><img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=900&q=85" alt="Keys and personal belongings"><span class="imagecaption"><small>02 / ON THE MOVE</small><b>The things we carry</b><span>Tap to discover ↗</span></span></span><span class="flipback"><span class="backnumber">02</span><b>Bags & belongings</b><span>Backpacks, lunch bags and jackets can be reported with a general place and date.</span><span class="backhint">Keep one identifying detail private to help verify ownership.</span></span></span>
-   </button>
-   <button class="flipcard" type="button" aria-label="Flip the things we listen to card" onclick="this.classList.toggle('turned')">
-    <span class="flipinner"><span class="flipfront"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85" alt="Camera and technology item"><span class="imagecaption"><small>03 / IN OUR WORLD</small><b>The things we love</b><span>Tap to discover ↗</span></span></span><span class="flipback"><span class="backnumber">03</span><b>Tech & treasures</b><span>Headphones, chargers and devices can be described without exposing serial numbers or private data.</span><span class="backhint">Meet in a public place when arranging a return.</span></span></span>
-   </button>
-  </div>
-  <div class="gallery-foot"><span class="orbit-dot"></span> Tap a card to turn it over <span class="foot-divider">·</span> Use “Rotate collection” to shift the whole gallery in 3D</div>
- </div>
-</section>
-<section class="section" id="browse"><div class="wrap"><div class="sectionhead"><div><div class="kicker">A little discovery</div><h2>Let’s find what you’re looking for.</h2><p>Browse community reports, narrow things down, and see if something feels familiar.</p></div><span class="demo-tag">Sample cards are marked as demo</span></div><div class="listingbar"><label class="searchbox"><span class="searchsymbol">⌕</span><input id="search" type="search" placeholder="What are you looking for?" oninput="renderItems()" aria-label="Search items"></label><select id="category" class="filter" onchange="renderItems()" aria-label="Filter by category"><option value="all">All categories</option><option>Electronics</option><option>Bags</option><option>Accessories</option><option>Keys</option><option>Clothing</option><option>Books</option><option>Other</option></select><select id="locationFilter" class="filter" onchange="renderItems()" aria-label="Filter by location"><option value="all">All locations</option><option value="library">Library</option><option value="park">Park</option><option value="campus">Campus</option><option value="centre">Centre</option></select><div class="tabs" aria-label="Report type"><button class="tab active" id="tab-all" onclick="setTab('all')">All</button><button class="tab" id="tab-lost" onclick="setTab('lost')">Lost</button><button class="tab" id="tab-found" onclick="setTab('found')">Found</button></div></div><div class="itemsgrid" id="itemsgrid"></div></div></section>
-<section class="section" id="categories"><div class="wrap"><div class="sectionhead"><div><div class="kicker">Explore by category</div><h2>Every lost thing has a story.</h2><p>Start with what you remember. The smallest clue can make a difference.</p></div></div><div class="categorygrid"><button class="catcard" onclick="pickCategory('Electronics')"><img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=700&q=85" alt="Headphones"><span class="catname"><small>01 / TECH</small>Electronics</span></button><button class="catcard" onclick="pickCategory('Bags')"><img loading="lazy" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=85" alt="Backpack"><span class="catname"><small>02 / ON THE GO</small>Bags & accessories</span></button><button class="catcard" onclick="pickCategory('Keys')"><img loading="lazy" src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=700&q=85" alt="Keys"><span class="catname"><small>03 / EVERYDAY</small>Keys & cards</span></button><button class="catcard" onclick="pickCategory('Books')"><img loading="lazy" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=700&q=85" alt="Books"><span class="catname"><small>04 / LEARNING</small>Books & stationery</span></button></div></div></section>
-<section class="section" id="how"><div class="wrap"><div class="sectionhead"><div><div class="kicker">Gentle by design</div><h2>Three steps. One little reunion.</h2><p>FOUNDLY makes it easier to take the next step when something goes missing—or when you find something that belongs to someone else.</p></div></div><div class="howgrid"><article class="howcard"><div class="step">01</div><h3>Search with hope</h3><p>Look through reports using a name, category, or general location. A small detail might lead you in the right direction.</p></article><article class="howcard"><div class="step">02</div><h3>Share what you know</h3><p>Report a lost or found belonging with a clear description. Keep one identifying detail private so ownership can be checked.</p></article><article class="howcard"><div class="step">03</div><h3>Reconnect safely</h3><p>Compare details before arranging a return. Use a staffed public place and involve a trusted adult when appropriate.</p></article></div></div></section>
-<section class="section" id="safety"><div class="wrap"><div class="safety-panel"><div><div class="kicker" style="color:#c6d4ff">Care comes first</div><h2>Finding things should feel safe.</h2><p>Lost belongings can be personal. Share only what helps someone recognise an item, and keep sensitive details private.</p></div><div class="safetylist"><div class="safetyitem"><span class="check">✓</span><span>Never publish home addresses, ID numbers, passwords, or private contact details.</span></div><div class="safetyitem"><span class="check">✓</span><span>Ask claimants to privately describe a detail that isn't shown in the report.</span></div><div class="safetyitem"><span class="check">✓</span><span>Choose a staffed public location for returns; don't meet strangers alone.</span></div><div class="safetyitem"><span class="check">✓</span><span>Demo reports stay in this browser. A shared live service needs a secure backend.</span></div></div></div></div></section>
-<section class="section" id="messages"><div class="wrap"><div class="sectionhead"><div><div class="kicker">A thoughtful connection</div><h2>Messages, with care.</h2><p>Keep conversations focused on verifying an item and arranging a safe return.</p></div></div><div class="messagepanel"><div class="messageintro"><div class="trusticon" style="width:52px;height:52px;font-size:1.5rem">💬</div><h3>Private in-app messages</h3><p>This prototype shows the message area, but it does not send messages to other people yet. Real private messaging needs accounts and a secure backend.</p><button class="btn secondary small" onclick="showToast('Messaging needs a connected backend before it can send.')">How it works ↗</button></div><div class="messagebox"><div class="messageempty"><div class="big">☁</div><b>Your conversations will appear here.</b><p>When secure messaging is connected, you can coordinate a return without posting personal contact details publicly.</p></div></div></div></div></section>
-<section class="section"><div class="wrap"><div class="cta"><div class="kicker">Every item deserves a way home</div><h2>Somewhere, your lost item is waiting.</h2><p>Let’s give it a way back home. Search the reports or help someone else by sharing what you found.</p><div class="hero-actions" style="justify-content:center"><button class="btn primary" onclick="document.getElementById('browse').scrollIntoView({behavior:'smooth'})">Find an Item ↗</button><button class="btn secondary" onclick="openReport('found')">Report an Item ♡</button></div></div></div></section>
-</main>
-<footer class="footer"><div class="wrap"><div class="footerin"><a class="brand" href="#home"><span class="brandmark" aria-hidden="true"><svg viewBox="0 0 48 48" role="img" aria-label="FOUNDLY leaf mark"><defs><linearGradient id="leafShade" x1="9" y1="38" x2="37" y2="8" gradientUnits="userSpaceOnUse"><stop stop-color="#789b8b"/><stop offset="1" stop-color="#c1d1bd"/></linearGradient></defs><path d="M8 35C8 17 19 7 39 7C39 26 29 39 11 39" fill="url(#leafShade)" stroke="#e9f0e8" stroke-opacity=".55" stroke-width=".8"/><path d="M10 38C18 30 26 21 36 11" fill="none" stroke="#f4f3e9" stroke-width="1.7" stroke-linecap="round"/><path d="M21 27L20 18M27 21L34 22M16 32L15 25" fill="none" stroke="#f4f3e9" stroke-opacity=".9" stroke-width="1.2" stroke-linecap="round"/><circle cx="37" cy="9" r="1.4" fill="#d7c79b"/></svg></span> FOUNDLY</a><div class="footlinks"><a href="#browse">Browse</a><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#messages">Messages</a></div><span>Made with a little hope ♡</span></div><p class="footnote">FOUNDLY is a front-end prototype. Reports are saved only in this browser on this device; they are not shared with other visitors. Demo listings are fictional examples. Do not enter sensitive personal information.</p></div></footer>
-<div class="modalback" id="reportmodal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal"><div class="modalhead"><div><div class="kicker">A little help goes a long way</div><h2 id="modal-title">Report an item</h2><p id="modal-subtitle">Tell the community what happened.</p></div><button class="close" onclick="closeModal()" aria-label="Close dialog">×</button></div><form id="reportform"><div class="formgrid"><div class="field"><label for="type">Report type</label><select id="type" required><option value="lost">I lost an item</option><option value="found">I found an item</option></select></div><div class="field"><label for="itemcategory">Category</label><select id="itemcategory" required><option>Electronics</option><option>Bags</option><option>Accessories</option><option>Keys</option><option>Clothing</option><option>Books</option><option>Other</option></select></div><div class="field full"><label for="itemname">Item name</label><input id="itemname" required maxlength="70" placeholder="e.g. Blue water bottle"></div><div class="field"><label for="place">General location</label><input id="place" required maxlength="80" placeholder="e.g. Community library"></div><div class="field"><label for="date">Date</label><input id="date" type="date" required></div><div class="field full"><label for="description">Description</label><textarea id="description" required maxlength="500" placeholder="Colour, general features, or where it was seen…"></textarea><span class="hint">Keep one unique detail private so the real owner can verify the claim.</span></div></div><div class="safetybox">♧ Privacy note: reports are stored only in this browser. They are not sent to a shared database.</div><div class="formactions"><button type="button" class="btn secondary" onclick="closeModal()">Cancel</button><button type="submit" class="btn primary">Save report ↗</button></div></form></div></div>
-<div class="modalback" id="detailmodal" role="dialog" aria-modal="true" aria-labelledby="detail-title"><div class="modal"><div class="modalhead"><div><h2 id="detail-title">Item details</h2><p id="detail-subtitle"></p></div><button class="close" onclick="closeDetail()" aria-label="Close dialog">×</button></div><div id="detailcontent"></div></div></div><div class="toast" id="toast" role="status"></div>
-<script>
-const $=id=>document.getElementById(id);let activeTab='all',toastTimer;const photo={Electronics:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=85',Bags:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=85',Accessories:'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85',Keys:'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=85',Clothing:'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85',Books:'https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=800&q=85',Other:'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=85'};const today=()=>new Date().toISOString().slice(0,10);const ago=n=>{let d=new Date();d.setDate(d.getDate()-n);return d.toISOString().slice(0,10)};const demoItems=[{id:'d1',type:'found',category:'Electronics',name:'Wireless headphones',place:'Campus library',date:ago(1),description:'A pair of over-ear headphones was found near the quiet study area.',demo:true},{id:'d2',type:'lost',category:'Keys',name:'House keys with a blue tag',place:'Riverside Park',date:ago(2),description:'A small keyring with several keys. One identifying detail is intentionally not listed.',demo:true},{id:'d3',type:'found',category:'Bags',name:'Travel backpack',place:'Community centre',date:ago(0),description:'A dark travel backpack was found near the reception area.',demo:true},{id:'d4',type:'lost',category:'Accessories',name:'Leather wallet',place:'City library',date:ago(1),description:'A brown wallet. Please verify ownership privately before returning.',demo:true},{id:'d5',type:'found',category:'Books',name:'Blue notebook',place:'Campus hall',date:ago(3),description:'A notebook left on a bench near the main hall.',demo:true},{id:'d6',type:'lost',category:'Clothing',name:'Light jacket',place:'Sports centre',date:ago(1),description:'A light jacket possibly left after an activity.',demo:true}];let items=[];function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function loadItems(){try{items=[...JSON.parse(localStorage.getItem('foundly_items')||'[]'),...demoItems]}catch(e){items=[...demoItems]}}function saveItems(){try{localStorage.setItem('foundly_items',JSON.stringify(items.filter(x=>!x.demo)))}catch(e){showToast('Could not save in this browser.')}}function dateText(d){return d?new Date(d+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric'}):'Date unknown'}function setTab(t){activeTab=t;['all','lost','found'].forEach(x=>$('tab-'+x).classList.toggle('active',x===t));renderItems()}function renderItems(){const q=$('search').value.trim().toLowerCase(),cat=$('category').value,loc=$('locationFilter').value;const arr=items.filter(x=>(activeTab==='all'||x.type===activeTab)&&(cat==='all'||x.category===cat)&&(!q||[x.name,x.category,x.place,x.description].join(' ').toLowerCase().includes(q))&&(loc==='all'||x.place.toLowerCase().includes(loc)));$('itemsgrid').innerHTML=arr.length?arr.map(x=>`<article class="itemcard"><div class="itemcover"><img loading="lazy" src="${photo[x.category]||photo.Other}" alt="Illustrative photo for ${escapeHtml(x.category)}" onerror="this.style.display='none'"><span class="typebadge ${x.type==='found'?'found':''}">${x.type==='lost'?'Lost item':'Found item'}${x.demo?' · Demo':''}</span></div><div class="itembody"><h3>${escapeHtml(x.name)}</h3><div class="meta"><span>⌖ ${escapeHtml(x.place)}</span><span>· ${dateText(x.date)}</span></div><p>${escapeHtml(x.description.length>100?x.description.slice(0,97)+'…':x.description)}</p><div class="itemfooter"><span class="pill">${escapeHtml(x.category)}</span><button class="btn secondary small" onclick="showDetails('${x.id}')">View details ↗</button></div></div></article>`).join(''):'<div class="empty"><div style="font-size:2rem">☁</div><b>No matching reports yet.</b><p>Try another search or add a report to help someone find their way home.</p><button class="btn primary small" onclick="openReport(\'lost\')">＋ Report an item</button></div>'}function openReport(type){$('type').value=type;$('modal-title').textContent=type==='lost'?'Report a lost item':'Report a found item';$('modal-subtitle').textContent=type==='lost'?'Tell the community what went missing.':'Help an item find its way home.';$('date').value=today();$('reportmodal').classList.add('show');document.body.style.overflow='hidden';setTimeout(()=>$('itemname').focus(),50)}function closeModal(){$('reportmodal').classList.remove('show');document.body.style.overflow=''}function closeDetail(){$('detailmodal').classList.remove('show');document.body.style.overflow=''}function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3200)}function pickCategory(c){$('category').value=c;$('browse').scrollIntoView({behavior:'smooth'});renderItems()}function toggleMenu(){$('navlinks').classList.toggle('open')}document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>$('navlinks').classList.remove('open')));$('reportform').addEventListener('submit',e=>{e.preventDefault();const x={id:'u'+Date.now(),type:$('type').value,category:$('itemcategory').value,name:$('itemname').value.trim(),place:$('place').value.trim(),date:$('date').value,description:$('description').value.trim(),demo:false};items.unshift(x);saveItems();closeModal();$('reportform').reset();$('search').value='';$('category').value='all';$('locationFilter').value='all';setTab('all');renderItems();$('browse').scrollIntoView({behavior:'smooth'});showToast('Report saved in this browser only — not shared online.');});function showDetails(id){const x=items.find(y=>y.id===id);if(!x)return;$('detail-title').textContent=x.name;$('detail-subtitle').textContent=(x.type==='lost'?'Lost item':'Found item')+' · '+x.category+(x.demo?' · Demo listing':'');$('detailcontent').innerHTML=`<div style="margin-top:18px;border-radius:18px;overflow:hidden;height:190px"><img src="${photo[x.category]||photo.Other}" alt="Illustrative ${escapeHtml(x.category)} photo" style="width:100%;height:100%;object-fit:cover"></div><p style="margin:14px 0">${escapeHtml(x.description)}</p><div class="meta"><span>⌖ ${escapeHtml(x.place)}</span><span>· ${dateText(x.date)}</span></div><div class="safetybox">♧ <b>Safety tip:</b> Ask a claimant to describe one private identifying detail. Never share ID numbers or home addresses.</div><div class="formactions"><button class="btn secondary" onclick="closeDetail()">Close</button><button class="btn primary" onclick="closeDetail();showToast('Messaging is a preview only until a secure backend is connected.')">I may know this item ↗</button></div><p class="hint" style="margin-top:12px">${x.demo?'Demo listing: this is an example, not a verified real report.':'This report is saved in your browser only; other visitors cannot see it.'}</p>`;$('detailmodal').classList.add('show');document.body.style.overflow='hidden'}$('reportmodal').addEventListener('click',e=>{if(e.target===$('reportmodal'))closeModal()});$('detailmodal').addEventListener('click',e=>{if(e.target===$('detailmodal'))closeDetail()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeDetail()}});loadItems();renderItems();
-
-function rotateCollection(){const g=document.getElementById('orbitGallery');if(!g)return;g.classList.toggle('rotated');g.querySelectorAll('.flipcard').forEach((c,i)=>{c.style.transitionDelay=g.classList.contains('rotated')?(i*70)+'ms':'0ms'});}
-
-// Direct manipulation: drag the hero scene or gallery to rotate the 3D perspective.
-(function enableDrag3D(){
- const hero=document.querySelector('.heroart');
- if(hero){let down=false,sx=0,sy=0,rx=0,ry=0,startX=0,startY=0;
-  hero.addEventListener('pointerdown',e=>{if(e.target.closest('button,a'))return;down=true;sx=e.clientX;sy=e.clientY;startX=ry;startY=rx;hero.classList.add('dragging');hero.setPointerCapture?.(e.pointerId)});
-  hero.addEventListener('pointermove',e=>{if(!down)return;ry=Math.max(-22,Math.min(22,startX+(e.clientX-sx)*.11));rx=Math.max(-13,Math.min(13,startY-(e.clientY-sy)*.09));hero.style.transform=`perspective(1100px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.015,1.015,1.015)`;hero.querySelectorAll('.floatcard').forEach((c,i)=>{const d=i+1;c.style.translate=`${ry*.18*d}px ${-rx*.2*d}px`;c.style.rotate=`${(i-1)*3+ry*.035}deg`})});
-  const end=()=>{down=false;hero.classList.remove('dragging')};hero.addEventListener('pointerup',end);hero.addEventListener('pointercancel',end);hero.addEventListener('lostpointercapture',end);
-  hero.addEventListener('dblclick',()=>{hero.style.transform='';hero.querySelectorAll('.floatcard').forEach(c=>{c.style.translate='';c.style.rotate=''})});
- }
- const gallery=document.getElementById('orbitGallery');if(gallery){let down=false,sx=0,sy=0,rx=0,ry=0;
-  gallery.addEventListener('pointerdown',e=>{if(e.target.closest('.flipcard'))return;down=true;sx=e.clientX;sy=e.clientY;gallery.classList.add('dragging');gallery.setPointerCapture?.(e.pointerId)});
-  gallery.addEventListener('pointermove',e=>{if(!down)return;ry=Math.max(-28,Math.min(28,ry+(e.clientX-sx)*.08));rx=Math.max(-10,Math.min(10,rx+(e.clientY-sy)*.035));sx=e.clientX;sy=e.clientY;gallery.style.transform=`rotateY(${ry}deg) rotateX(${-rx}deg)`});
-  const end=()=>{down=false;gallery.classList.remove('dragging')};gallery.addEventListener('pointerup',end);gallery.addEventListener('pointercancel',end);gallery.addEventListener('lostpointercapture',end);
- }
-})();
-
-</script></body></html>
+<p class="p1"><br></p>
+<p class="p2">&lt;!DOCTYPE html&gt;</p>
+<p class="p2">&lt;html lang="en"&gt;</p>
+<p class="p2">&lt;head&gt;</p>
+<p class="p2">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p2">&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p2">&lt;meta name="description" content="FOUNDLY — a community lost-and-found platform."&gt;</p>
+<p class="p2">&lt;title&gt;FOUNDLY | Lost Things. Found Together.&lt;/title&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;style&gt;</p>
+<p class="p2">:root {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>--navy: #101b35;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>--blue: #4564f5;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>--mint: #a9f0ce;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>--bg: #f5f7fc;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>--text: #182238;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>--muted: #748097;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>--border: #e5e9f1;</p>
+<p class="p2">}</p>
+<p class="p2">* { box-sizing: border-box; }</p>
+<p class="p2">html { scroll-behavior: smooth; }</p>
+<p class="p2">body {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin: 0;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: var(--bg);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--text);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;</p>
+<p class="p2">}</p>
+<p class="p2">button, input, textarea, select { font: inherit; }</p>
+<p class="p2">button { cursor: pointer; }</p>
+<p class="p2">header {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>position: sticky;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>top: 0;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>z-index: 5;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: var(--navy);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p2">}</p>
+<p class="p2">nav {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>max-width: 1150px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>min-height: 76px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin: auto;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 15px 24px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>justify-content: space-between;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 15px;</p>
+<p class="p2">}</p>
+<p class="p2">.logo {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 23px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-weight: 900;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>letter-spacing: 3px;</p>
+<p class="p2">}</p>
+<p class="p2">.logo span { color: var(--mint); }</p>
+<p class="p2">.nav-actions { display: flex; gap: 10px; }</p>
+<p class="p2">.nav-actions a {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>text-decoration: none;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 12px;</p>
+<p class="p2">}</p>
+<p class="p2">button, .button {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border: 0;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 12px 17px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-weight: 750;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>transition: .2s;</p>
+<p class="p2">}</p>
+<p class="p2">button:hover, .button:hover { transform: translateY(-2px); }</p>
+<p class="p2">.primary { background: var(--blue); color: white; }</p>
+<p class="p2">.secondary { background: white; color: var(--navy); }</p>
+<p class="p2">.outline {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: transparent;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border: 1px solid #ffffff70;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p2">}</p>
+<p class="p2">.hero {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: var(--navy);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 78px 24px;</p>
+<p class="p2">}</p>
+<p class="p2">.hero-inner {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>max-width: 1100px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin: auto;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>grid-template-columns: 1.15fr .85fr;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 50px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2">}</p>
+<p class="p2">.eyebrow {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--mint);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-weight: 800;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>letter-spacing: 2px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>text-transform: uppercase;</p>
+<p class="p2">}</p>
+<p class="p2">h1 {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: clamp(43px, 6vw, 72px);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>letter-spacing: -3px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>line-height: 1.04;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin: 20px 0;</p>
+<p class="p2">}</p>
+<p class="p2">h1 span { color: var(--mint); }</p>
+<p class="p2">.hero p {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: #c8d1e4;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 17px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>line-height: 1.8;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>max-width: 520px;</p>
+<p class="p2">}</p>
+<p class="p2">.hero-buttons {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>flex-wrap: wrap;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-top: 27px;</p>
+<p class="p2">}</p>
+<p class="p2">.preview {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--text);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 23px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 24px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>box-shadow: 0 25px 70px #0003;</p>
+<p class="p2">}</p>
+<p class="p2">.preview h3 { margin-top: 0; }</p>
+<p class="p2">.preview-item {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 14px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 14px 0;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-bottom: 1px solid var(--border);</p>
+<p class="p2">}</p>
+<p class="p2">.emoji {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: #eef1ff;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>width: 52px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>height: 52px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>place-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 26px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 15px;</p>
+<p class="p2">}</p>
+<p class="p2">.preview-item small {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: block;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-top: 5px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--muted);</p>
+<p class="p2">}</p>
+<p class="p2">main section:not(.hero) {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>max-width: 1150px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin: auto;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 65px 24px;</p>
+<p class="p2">}</p>
+<p class="p2">.section-label {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--blue);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-weight: 850;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>letter-spacing: 2px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>text-transform: uppercase;</p>
+<p class="p2">}</p>
+<p class="p2">h2 {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: clamp(28px, 4vw, 40px);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>letter-spacing: -1px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin: 10px 0;</p>
+<p class="p2">}</p>
+<p class="p2">.description {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>line-height: 1.7;</p>
+<p class="p2">}</p>
+<p class="p2">.section-top {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>justify-content: space-between;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 20px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-bottom: 25px;</p>
+<p class="p2">}</p>
+<p class="p2">.search-row {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>grid-template-columns: 1fr 180px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-bottom: 24px;</p>
+<p class="p2">}</p>
+<p class="p2">.field {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 14px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border: 1px solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>outline: none;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--text);</p>
+<p class="p2">}</p>
+<p class="p2">.field:focus {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-color: var(--blue);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>box-shadow: 0 0 0 3px #4564f51b;</p>
+<p class="p2">}</p>
+<p class="p2">.cards {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>grid-template-columns: repeat(3, minmax(0, 1fr));</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 18px;</p>
+<p class="p2">}</p>
+<p class="p2">.card {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border: 1px solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 20px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 19px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>transition: .2s;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>min-width: 0;</p>
+<p class="p2">}</p>
+<p class="p2">.card:hover {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>transform: translateY(-4px);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>box-shadow: 0 14px 35px #14204410;</p>
+<p class="p2">}</p>
+<p class="p2">.card-top {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>justify-content: space-between;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 8px;</p>
+<p class="p2">}</p>
+<p class="p2">.tag {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 11px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-weight: 850;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 7px 9px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 20px;</p>
+<p class="p2">}</p>
+<p class="p2">.tag.lost { background: #fff0df; color: #9a4c0b; }</p>
+<p class="p2">.tag.found { background: #def8e9; color: #176044; }</p>
+<p class="p2">.card h3 { margin-bottom: 8px; }</p>
+<p class="p2">.card p {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>line-height: 1.6;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 14px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>min-height: 44px;</p>
+<p class="p2">}</p>
+<p class="p2">.meta {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-top: 1px solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding-top: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-top: 12px;</p>
+<p class="p2">}</p>
+<p class="p2">.card button { width: 100%; margin-top: 15px; }</p>
+<p class="p2">.empty {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>grid-column: 1 / -1;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 40px 15px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 18px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--muted);</p>
+<p class="p2">}</p>
+<p class="p2">.how-grid {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>grid-template-columns: repeat(3, 1fr);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 20px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-top: 30px;</p>
+<p class="p2">}</p>
+<p class="p2">.how-card {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border: 1px solid var(--border);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 18px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 24px;</p>
+<p class="p2">}</p>
+<p class="p2">.step {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>width: 42px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>height: 42px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 13px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>place-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: #ddf8e9;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-weight: 900;</p>
+<p class="p2">}</p>
+<p class="p2">.how-card p {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: var(--muted);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>line-height: 1.7;</p>
+<p class="p2">}</p>
+<p class="p2">.cta {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: #dff8ec;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 24px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 30px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>justify-content: space-between;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 20px;</p>
+<p class="p2">}</p>
+<p class="p2">footer {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: var(--navy);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: #c8d1e4;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 30px 24px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>line-height: 1.8;</p>
+<p class="p2">}</p>
+<p class="p2">footer strong { color: white; letter-spacing: 3px; }</p>
+<p class="p2">.modal {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: none;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>position: fixed;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>inset: 0;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>z-index: 10;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: #081126b8;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 18px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p2">}</p>
+<p class="p2">.modal.open { display: flex; }</p>
+<p class="p2">.modal-content {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 22px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 25px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>width: min(550px, 100%);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>max-height: 90vh;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>overflow-y: auto;</p>
+<p class="p2">}</p>
+<p class="p2">.modal-heading {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>justify-content: space-between;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p2">}</p>
+<p class="p2">.close { background: #eef1f7; font-size: 20px; }</p>
+<p class="p2">.form-grid {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: grid;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 13px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-top: 20px;</p>
+<p class="p2">}</p>
+<p class="p2">.form-field {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>gap: 7px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-weight: 750;</p>
+<p class="p2">}</p>
+<p class="p2">.full { grid-column: 1 / -1; }</p>
+<p class="p2">textarea { resize: vertical; min-height: 85px; }</p>
+<p class="p2">.notice {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>background: #f1f4fa;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: #657087;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>padding: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>border-radius: 10px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>line-height: 1.6;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin: 15px 0;</p>
+<p class="p2">}</p>
+<p class="p2">.form-submit { width: 100%; }</p>
+<p class="p2">#message {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>margin-top: 15px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>font-size: 14px;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>color: #176044;</p>
+<p class="p2">}</p>
+<p class="p2">@media(max-width:800px) {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.hero-inner { grid-template-columns: 1fr; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.cards { grid-template-columns: repeat(2, minmax(0,1fr)); }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.nav-actions a { display: none; }</p>
+<p class="p2">}</p>
+<p class="p2">@media(max-width:550px) {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>nav { padding: 12px 16px; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.logo { font-size: 19px; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.nav-actions button { padding: 10px; font-size: 12px; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.hero { padding: 55px 18px; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>h1 { letter-spacing: -2px; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>main section:not(.hero) { padding: 45px 18px; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.cards, .how-grid { grid-template-columns: 1fr; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.search-row, .form-grid { grid-template-columns: 1fr; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.full { grid-column: auto; }</p>
+<p class="p2"><span class="Apple-converted-space">  </span>.section-top, .cta { align-items: flex-start; flex-direction: column; }</p>
+<p class="p2">}</p>
+<p class="p2">&lt;/style&gt;</p>
+<p class="p2">&lt;/head&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;body&gt;</p>
+<p class="p2">&lt;header&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;nav&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="logo"&gt;⌕ FOUND&lt;span&gt;LY&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="nav-actions"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;a href="#browse"&gt;Browse items&lt;/a&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;a href="#how"&gt;How it works&lt;/a&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;button class="primary" onclick="openReport()"&gt;+ Report item&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
+<p class="p2">&lt;/header&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;div class="hero"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="hero-inner"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="eyebrow"&gt;A community that cares&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h1&gt;Lost things.&lt;br&gt;&lt;span&gt;Found together.&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>Lost something important? Found something that belongs to someone</p>
+<p class="p2"><span class="Apple-converted-space">        </span>else? FOUNDLY helps bring people and their belongings back together.</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="hero-buttons"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;button class="secondary" onclick="document.querySelector('#browse').scrollIntoView()"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>Find an item ↗</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;button class="outline" onclick="openReport()"&gt;+ Report an item&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="preview"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Recently reported&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="preview-item"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;div class="emoji"&gt;🎧&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;b&gt;Wireless headphones&lt;/b&gt;&lt;small&gt;Library · Found item&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="preview-item"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;div class="emoji"&gt;🎒&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;b&gt;Blue backpack&lt;/b&gt;&lt;small&gt;Sports hall · Lost item&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="preview-item"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;div class="emoji"&gt;🔑&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;div&gt;&lt;b&gt;Set of keys&lt;/b&gt;&lt;small&gt;Reception · Found item&lt;/small&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p style="font-size:12px;color:#748097"&gt;Example listings to demonstrate the website.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/div&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;main&gt;</p>
+<p class="p2">&lt;section id="browse"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="section-top"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="section-label"&gt;Community board&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h2&gt;Let's find what you're looking for.&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p class="description"&gt;Search reports or browse lost and found items.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;button class="primary" onclick="openReport()"&gt;+ Add a listing&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="search-row"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;input class="field" id="search" placeholder="Search item or location..." oninput="renderItems()"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;select class="field" id="filter" onchange="renderItems()"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;option value="all"&gt;All items&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;option value="lost"&gt;Lost items&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;option value="found"&gt;Found items&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/select&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="cards" id="cards"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="notice"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>Starter version: reports you submit are stored only in this browser.</p>
+<p class="p2"><span class="Apple-converted-space">    </span>Other visitors cannot see them yet. Real shared listings and secure</p>
+<p class="p2"><span class="Apple-converted-space">    </span>accounts need a connected backend.</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;section id="how"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="section-label"&gt;How it works&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;h2&gt;Three steps to a reunion.&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;p class="description"&gt;Designed to make finding belongings simple.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="how-grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="how-card"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="step"&gt;01&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Search&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p&gt;Look through reports and use the filters to find a matching item.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="how-card"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="step"&gt;02&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Report&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p&gt;Describe a lost or found item and give its general location.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="how-card"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="step"&gt;03&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h3&gt;Reconnect&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p&gt;Arrange a safe return after privately verifying who owns the item.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="cta"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h2&gt;Found something?&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p class="description"&gt;Help it find its way home.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;button class="primary" onclick="openReport('found')"&gt;Report a found item →&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/section&gt;</p>
+<p class="p2">&lt;/main&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;footer&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;strong&gt;FOUNDLY&lt;/strong&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div&gt;Lost things. Found together.&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;small&gt;Share safely. Be kind. Help things find their way home.&lt;/small&gt;</p>
+<p class="p2">&lt;/footer&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;div class="modal" id="reportModal" role="dialog" aria-modal="true"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;div class="modal-content"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;div class="modal-heading"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h2&gt;Report an item&lt;/h2&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;button class="close" onclick="closeReport()" aria-label="Close"&gt;×&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;p class="description"&gt;Share the details that could help identify the item.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;form id="reportForm"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="form-grid"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;label class="form-field"&gt;Report type</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;select class="field" name="type" id="reportType" required&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option value="lost"&gt;I lost something&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option value="found"&gt;I found something&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;label class="form-field"&gt;Category</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;select class="field" name="category" required&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option&gt;Electronics&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option&gt;Bags and accessories&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option&gt;Keys and cards&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option&gt;Clothing&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option&gt;Books and stationery&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span>&lt;option&gt;Other&lt;/option&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;/select&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;label class="form-field full"&gt;Item name</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;input class="field" name="title" maxlength="70" required placeholder="e.g. Black water bottle"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;label class="form-field full"&gt;Description</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;textarea class="field" name="description" maxlength="400" required placeholder="Colour, brand, identifying details..."&gt;&lt;/textarea&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;label class="form-field"&gt;General location</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;input class="field" name="location" maxlength="90" required placeholder="e.g. School library"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;label class="form-field"&gt;Date</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;input class="field" name="date" type="date" required&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;label class="form-field full"&gt;Contact instructions (optional)</p>
+<p class="p2"><span class="Apple-converted-space">          </span>&lt;input class="field" name="contact" maxlength="120" placeholder="e.g. Ask at the reception desk"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/label&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="notice"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>Do not include passwords, identity numbers, your home address,</p>
+<p class="p2"><span class="Apple-converted-space">        </span>or other sensitive information.</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;button class="primary form-submit" type="submit"&gt;Save report&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div id="message" role="status"&gt;&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/form&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2">&lt;/div&gt;</p>
+<p class="p1"><br></p>
+<p class="p2">&lt;script&gt;</p>
+<p class="p2">const examples = [</p>
+<p class="p2"><span class="Apple-converted-space">  </span>{</p>
+<p class="p2"><span class="Apple-converted-space">    </span>id:"demo1", type:"found", category:"Electronics",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>title:"Wireless headphones",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>description:"Wireless headphones in a dark case.",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>location:"Main library", date:"2026-10-20",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>contact:"Ask at the library desk", icon:"🎧"</p>
+<p class="p2"><span class="Apple-converted-space">  </span>},</p>
+<p class="p2"><span class="Apple-converted-space">  </span>{</p>
+<p class="p2"><span class="Apple-converted-space">    </span>id:"demo2", type:"lost", category:"Bags and accessories",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>title:"Blue school backpack",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>description:"Blue backpack with a small keychain attached.",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>location:"Sports hall", date:"2026-10-19",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>contact:"Ask at the reception desk", icon:"🎒"</p>
+<p class="p2"><span class="Apple-converted-space">  </span>},</p>
+<p class="p2"><span class="Apple-converted-space">  </span>{</p>
+<p class="p2"><span class="Apple-converted-space">    </span>id:"demo3", type:"found", category:"Keys and cards",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>title:"Keyring with three keys",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>description:"A set of keys on a silver keyring.",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>location:"Front reception", date:"2026-10-18",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>contact:"Ask at front reception", icon:"🔑"</p>
+<p class="p2"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2">];</p>
+<p class="p1"><br></p>
+<p class="p2">const categoryIcons = {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>"Electronics":"🎧",</p>
+<p class="p2"><span class="Apple-converted-space">  </span>"Bags and accessories":"🎒",</p>
+<p class="p2"><span class="Apple-converted-space">  </span>"Keys and cards":"🔑",</p>
+<p class="p2"><span class="Apple-converted-space">  </span>"Clothing":"🧥",</p>
+<p class="p2"><span class="Apple-converted-space">  </span>"Books and stationery":"📚",</p>
+<p class="p2"><span class="Apple-converted-space">  </span>"Other":"📦"</p>
+<p class="p2">};</p>
+<p class="p1"><br></p>
+<p class="p2">function getSaved() {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>try {</p>
+<p class="p2"><span class="Apple-converted-space">    </span>return JSON.parse(localStorage.getItem("foundlyReports") || "[]");</p>
+<p class="p2"><span class="Apple-converted-space">  </span>} catch (error) {</p>
+<p class="p2"><span class="Apple-converted-space">    </span>return [];</p>
+<p class="p2"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2">}</p>
+<p class="p1"><br></p>
+<p class="p2">function escapeHTML(value) {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>return String(value ?? "").replace(/[&amp;&lt;&gt;"']/g, character =&gt; ({</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"&amp;":"&amp;amp;",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"&lt;":"&amp;lt;",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"&gt;":"&amp;gt;",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>'"':"&amp;quot;",</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"'":"&amp;#39;"</p>
+<p class="p2"><span class="Apple-converted-space">  </span>})[character]);</p>
+<p class="p2">}</p>
+<p class="p1"><br></p>
+<p class="p2">function renderItems() {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>const query = document.getElementById("search").value.toLowerCase();</p>
+<p class="p2"><span class="Apple-converted-space">  </span>const filter = document.getElementById("filter").value;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>const items = [...getSaved(), ...examples].filter(item =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">    </span>const matchesType = filter === "all" || item.type === filter;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>const searchable = [</p>
+<p class="p2"><span class="Apple-converted-space">      </span>item.title, item.description, item.location, item.category</p>
+<p class="p2"><span class="Apple-converted-space">    </span>].join(" ").toLowerCase();</p>
+<p class="p2"><span class="Apple-converted-space">    </span>return matchesType &amp;&amp; searchable.includes(query);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>const root = document.getElementById("cards");</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>if (!items.length) {</p>
+<p class="p2"><span class="Apple-converted-space">    </span>root.innerHTML = `</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="empty"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;h3&gt;No matching items yet&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;p&gt;Try another search or report an item.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;button class="primary" onclick="openReport()"&gt;Report item&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;`;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>return;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>root.innerHTML = items.map(item =&gt; `</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;article class="card"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="card-top"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;div class="emoji"&gt;${item.icon || "📦"}&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;span class="tag ${item.type}"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span>${item.type === "lost" ? "LOST ITEM" : "FOUND ITEM"}</p>
+<p class="p2"><span class="Apple-converted-space">        </span>&lt;/span&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;h3&gt;${escapeHTML(item.title)}&lt;/h3&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;p&gt;${escapeHTML(item.description)}&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="meta"&gt;📍 ${escapeHTML(item.location)}&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;div class="meta"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>📅 ${escapeHTML(item.date)} · ${escapeHTML(item.category)}</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;button class="secondary" onclick="showDetails('${item.id}')"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span>View details</p>
+<p class="p2"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span>&lt;/article&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span>`).join("");</p>
+<p class="p2">}</p>
+<p class="p1"><br></p>
+<p class="p2">function showDetails(id) {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>const item = [...getSaved(), ...examples].find(entry =&gt; entry.id === id);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>if (!item) return;</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>alert(</p>
+<p class="p2"><span class="Apple-converted-space">    </span>item.title + "\n\n" +</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"Type: " + item.type + "\n" +</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"Location: " + item.location + "\n" +</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"Date: " + item.date + "\n\n" +</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"Contact instructions: " +</p>
+<p class="p2"><span class="Apple-converted-space">    </span>(item.contact || "No contact instructions provided.") +</p>
+<p class="p2"><span class="Apple-converted-space">    </span>"\n\nVerify ownership and arrange a safe handover."</p>
+<p class="p2"><span class="Apple-converted-space">  </span>);</p>
+<p class="p2">}</p>
+<p class="p1"><br></p>
+<p class="p2">function openReport(type) {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>document.getElementById("reportModal").classList.add("open");</p>
+<p class="p2"><span class="Apple-converted-space">  </span>document.getElementById("message").textContent = "";</p>
+<p class="p2"><span class="Apple-converted-space">  </span>if (type) document.getElementById("reportType").value = type;</p>
+<p class="p2">}</p>
+<p class="p1"><br></p>
+<p class="p2">function closeReport() {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>document.getElementById("reportModal").classList.remove("open");</p>
+<p class="p2">}</p>
+<p class="p1"><br></p>
+<p class="p2">document.getElementById("reportForm").addEventListener("submit", event =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>event.preventDefault();</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>const form = new FormData(event.target);</p>
+<p class="p2"><span class="Apple-converted-space">  </span>const category = form.get("category");</p>
+<p class="p2"><span class="Apple-converted-space">  </span>const report = {</p>
+<p class="p2"><span class="Apple-converted-space">    </span>id: "user" + Date.now(),</p>
+<p class="p2"><span class="Apple-converted-space">    </span>type: form.get("type"),</p>
+<p class="p2"><span class="Apple-converted-space">    </span>category,</p>
+<p class="p2"><span class="Apple-converted-space">    </span>title: form.get("title").trim(),</p>
+<p class="p2"><span class="Apple-converted-space">    </span>description: form.get("description").trim(),</p>
+<p class="p2"><span class="Apple-converted-space">    </span>location: form.get("location").trim(),</p>
+<p class="p2"><span class="Apple-converted-space">    </span>date: form.get("date"),</p>
+<p class="p2"><span class="Apple-converted-space">    </span>contact: form.get("contact").trim(),</p>
+<p class="p2"><span class="Apple-converted-space">    </span>icon: categoryIcons[category] || "📦"</p>
+<p class="p2"><span class="Apple-converted-space">  </span>};</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span>try {</p>
+<p class="p2"><span class="Apple-converted-space">    </span>const saved = getSaved();</p>
+<p class="p2"><span class="Apple-converted-space">    </span>saved.unshift(report);</p>
+<p class="p2"><span class="Apple-converted-space">    </span>localStorage.setItem("foundlyReports", JSON.stringify(saved));</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>event.target.reset();</p>
+<p class="p2"><span class="Apple-converted-space">    </span>closeReport();</p>
+<p class="p2"><span class="Apple-converted-space">    </span>renderItems();</p>
+<p class="p1"><br></p>
+<p class="p2"><span class="Apple-converted-space">    </span>document.getElementById("browse").scrollIntoView();</p>
+<p class="p2"><span class="Apple-converted-space">    </span>alert("Your report has been saved in this browser!");</p>
+<p class="p2"><span class="Apple-converted-space">  </span>} catch (error) {</p>
+<p class="p2"><span class="Apple-converted-space">    </span>alert("The report could not be saved. Check your browser settings.");</p>
+<p class="p2"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2">});</p>
+<p class="p1"><br></p>
+<p class="p2">document.getElementById("reportModal").addEventListener("click", event =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>if (event.target.id === "reportModal") closeReport();</p>
+<p class="p2">});</p>
+<p class="p1"><br></p>
+<p class="p2">document.addEventListener("keydown", event =&gt; {</p>
+<p class="p2"><span class="Apple-converted-space">  </span>if (event.key === "Escape") closeReport();</p>
+<p class="p2">});</p>
+<p class="p1"><br></p>
+<p class="p2">renderItems();</p>
+<p class="p2">&lt;/script&gt;</p>
+<p class="p2">&lt;/body&gt;</p>
+<p class="p2">&lt;/html&gt;</p>
+</body>
+</html>
